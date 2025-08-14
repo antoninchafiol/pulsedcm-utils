@@ -1,0 +1,16 @@
+Folder name,Series UID,Collection,3rd Party Analysis,Data Description URI,Subject ID,Study UID,Study Description,Study Date,Series Description,Manufacturer,Modality,SOP Class Name,SOP Class UID,Number of Images,File Size,File Location,Download Timestamp
+3_big_serie,1.3.6.1.4.1.9328.50.4.896055,CT COLONOGRAPHY,null,https://doi.org/10.7937/K9/TCIA.2015.NWTESAY1,1.3.6.1.4.1.9328.50.4.0787,1.3.6.1.4.1.9328.50.4.896054,Abdomen01ACRINColonographySupine,01/01/2000,Supine Colo.  1.0  B30f,SIEMENS,CT,CT Image Storage,1.2.840.10008.5.1.4.1.1.2,516,271.50 MB,.\CT COLONOGRAPHY\1.3.6.1.4.1.9328.50.4.0787\01-01-2000-62-Abdomen01ACRINColonographySupine-96054\3.000000-Supine Colo.  1.0  B30f-96055,2025-08-04T13:04:48.685
+2_small_serie,1.1.214.1.3.6079637.2.292.6808024663697239735,MIDI-B-Synthetic-Test,NO,https://doi.org/10.7937/cf2paw56,191999977,1.1.214.1.3.6079637.2.292.1853579464825257376,BREAST MRI 20130913,09-13-2013,CAD sub 4 at MM,GE MEDICAL SYSTEMS,MR,MR Image Storage,1.2.840.10008.5.1.4.1.1.4,80,42.17 MB,.\MIDI-B-Synthetic-Test\191999977\09-13-2013-NA-BREAST MRI 20130913-57376\20130913.000000-CAD sub 4 at MM-39735,2025-08-04T13:05:38.689
+1_big_image,1.2.784.1.3.5505619.9.673.1974092120942731657,MIDI-B-Synthetic-Validation,NO,https://doi.org/10.7937/cf2paw56,1011144680,1.2.784.1.3.5505619.9.673.1425480202932301497,MAMMO screening digital bilateral,03-28-2017,NA,HOLOGIC Inc.,MG,Breast Tomosynthesis Image Storage,1.2.840.10008.5.1.4.1.1.13.1.3,1,54.40 MB,.\MIDI-B-Synthetic-Validation\1011144680\03-28-2017-DBT-S00494-MAMMO screening digital bilateral-01497\991.000000-NA-31657,2025-08-04T13:02:16.336
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
