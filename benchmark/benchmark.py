@@ -1,5 +1,7 @@
 import subprocess
+import pandas as pd
 import os
+
 
 pulsedcm = "../../pulsedcm/target/release/pulsedcm-cli"
 dcmdump  = "dcmdump"
@@ -29,7 +31,7 @@ for current_folder in reversed(folders):
                 f"for f in {current_folder}/* ; do {dcmdump} +L +P PatientName +P PatientID +P Modality $f; done",
                 f"for f in {current_folder}/* ; do {dcmdump} +L +P PatientName +P PatientID +P StudyDate $f; done",
                 # JSON export via Python wrapper
-                f"for f in {current_folder}/* ; do dcm2json $f > dcmtk_js_csv/$(basename $f).json ; done",
+                f"for f in {current_folder}/* ; do dcm2json $f dcmtk_json_csv/$(basename $f).json ; done",
                 f"{find} | parallel dcmdump +L all -M {{}}",
                 ],
             "view": [
@@ -65,7 +67,6 @@ for current_folder in reversed(folders):
     }
 
     for group_name, cmd_list in commands.items():
-        subprocess.run(["cp", "-R", "data/*",  "tmp/"])
         csv_out = f"hyperfine_results/hyperfine_{os.path.basename(current_folder)}_{group_name}.csv"
         hf_cmd = [
                 "hyperfine",
@@ -85,10 +86,20 @@ for current_folder in reversed(folders):
         subprocess.run(hf_cmd, check=True)
 
 
+HF_PATH = "hyperfine_results"
 
-# Read and print results
-# with open(output_json) as f:
-#     results = json.load(f)
-#
-# for result in results["results"]:
-#     print(f"{result['command']} — mean: {result['mean']:.4f}s ± {result['stddev']:.4f}s")
+base_df = pd.DataFrame({});
+
+for f in os.listdir(HF_PATH):
+    split = f.split("_")
+    name = "_".join(split[1:5])
+    command = split[-1].split(".")[0]
+
+    df = pd.read_csv(f"{HF_PATH}/{f}")
+    df['folder'] = name
+    df['command_type'] = command
+    base_df = pd.concat([base_df, df])
+
+base_df.to_csv(f"{HF_PATH}/merged_results.csv")
+
+
