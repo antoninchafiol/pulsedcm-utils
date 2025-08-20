@@ -11,6 +11,7 @@ dcmodify = "dcmodify"
 input_folder     = os.path.join("tmp")
 folders          = [os.path.join(input_folder, i)  for i in os.listdir(input_folder)]
 folders          = [i for i in folders if not i.endswith('.csv')]
+print(folders)
 output_json      = "pulse_json_csv/tags_all.json"
 output_csv       = "pulse_json_csv/tags_all.csv"
 ano_output_dir   = "anonymization"
@@ -53,7 +54,7 @@ for current_folder in reversed(folders):
                 f"{pulsedcm} {current_folder} ano --out {ano_output_dir} --action remove --policy strict",
             #     # DCMTK
                 f"for f in {current_folder}/*; do dcmodify -e \"(0010,0010)\" -e \"(0010,0020)\" -e \"(0010,0030)\" -e \"(0010,0040)\" -e \"(0010,1000)\" -e \"(0010,1001)\" -e \"(0010,1040)\" -e \"(0010,2160)\" -e \"(0010,4000)\" -e \"(0008,0090)\" -e \"(0008,0050)\" -e \"(0008,0080)\" -e \"(0008,0081)\" -e \"(0008,1040)\" -e \"(0008,1010)\" -e \"(0038,0010)\" -e \"(0032,1032)\" -e \"(0032,1060)\" -e \"(0032,1064)\" -e \"(0040,1001)\" -e \"(0040,1003)\" -e \"(0040,1400)\" -e \"(0008,009C)\" -e \"(0010,1060)\" -e \"(0040,0243)\" -e \"(0040,0242)\" -e \"(0040,0254)\" -e \"(0018,1000)\" -e \"(0020,4000)\" -e \"(4008,0114)\" $f ; done",
-                f"{find} | parallel dcmodify -e \"(0010,0010)\" -e \"(0010,0020)\" -e \"(0010,0030)\" -e \"(0010,0040)\" -e \"(0010,1000)\" -e \"(0010,1001)\" -e \"(0010,1040)\" -e \"(0010,2160)\" -e \"(0010,4000)\" -e \"(0008,0090)\" -e \"(0008,0050)\" -e \"(0008,0080)\" -e \"(0008,0081)\" -e \"(0008,1040)\" -e \"(0008,1010)\" -e \"(0038,0010)\" -e \"(0032,1032)\" -e \"(0032,1060)\" -e \"(0032,1064)\" -e \"(0040,1001)\" -e \"(0040,1003)\" -e \"(0040,1400)\" -e \"(0008,009C)\" -e \"(0010,1060)\" -e \"(0040,0243)\" -e \"(0040,0242)\" -e \"(0040,0254)\" -e \"(0018,1000)\" -e \"(0020,4000)\" -e \"(4008,0114)\" {{}}",
+                f"{find} | parallel dcmodify -e \"\(0010,0010\)\" -e \"\(0010,0020\)\" -e \"\(0010,0030\)\" -e \"\(0010,0040\)\" -e \"\(0010,1000\)\" -e \"\(0010,1001\)\" -e \"\(0010,1040\)\" -e \"\(0010,2160\)\" -e \"\(0010,4000\)\" -e \"\(0008,0090\)\" -e \"\(0008,0050\)\" -e \"\(0008,0080\)\" -e \"\(0008,0081\)\" -e \"\(0008,1040\)\" -e \"\(0008,1010\)\" -e \"\(0038,0010\)\" -e \"\(0032,1032\)\" -e \"\(0032,1060\)\" -e \"\(0032,1064\)\" -e \"\(0040,1001\)\" -e \"\(0040,1003\)\" -e \"\(0040,1400\)\" -e \"\(0008,009C\)\" -e \"\(0010,1060\)\" -e \"\(0040,0243\)\" -e \"\(0040,0242\)\" -e \"\(0040,0254\)\" -e \"\(0018,1000\)\" -e \"\(0020,4000\)\" -e \"\(4008,0114\)\" {{}}",
             #     f"for f in {files}; do {dcmodify} --remove \"(0010,0010)\" < $f > ano_dcmtk/modified_$f; done",
             #     f"for f in {files}; do {dcmodify} --replace \"(0010,0010)=DUMMY\" {current_folder}< $f > ano_dcmtk/modified_$f ; done",
             #     f"for f in {files}; do {dcmodify} --replace \"(0010,0010)=\\\"\\\"\" --remove \"(0008,0080)\" < $f > ano_dcmtk/modified_$f; done",
@@ -73,7 +74,10 @@ for current_folder in reversed(folders):
                 "--warmup", "2",
                 "--runs", str(repeats),
                 "--ignore-failure",
-                "--export-csv", csv_out
+                # "--show-output",
+                "--export-csv", csv_out,
+                "--prepare",
+                f"cp data/{current_folder.split('/')[1]}/* {current_folder}/"
                 ]
         for cmd in cmd_list:
             hf_cmd += ["--command-name", cmd, cmd]
