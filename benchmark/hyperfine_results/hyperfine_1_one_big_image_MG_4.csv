@@ -1,0 +1,11 @@
+command,mean,stddev,median,user,system,min,max
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization,0.009391512840000001,0.0007920063839987657,0.00922493124,0.0008507599999999999,0.0027619199999999997,0.00865740124,0.01073392324
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 5 --batch 5,0.00973849764,0.0011702088545393512,0.00932409724,0.0012774079999999998,0.0025185359999999996,0.00878399624,0.01157622724
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 5 --batch 15,0.00953308004,0.0007024555503269941,0.00954656824,0.00296576,0.000770168,0.00865497224,0.01034116924
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 5 --batch 25,0.010504215439999999,0.0010903721033256033,0.01104397324,0.0009538079999999999,0.0033975360000000005,0.00884523024,0.01139267024
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 10 --batch 5,0.00903326824,0.0005664778829985335,0.00903746824,0.00164656,0.0019091520000000001,0.00851818424,0.00993475624
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 10 --batch 25,0.00965781184,0.0007988212936791934,0.00952874724,0.00246196,0.001268368,0.00894423424,0.01101534524
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 10 --batch 15,0.010114657439999999,0.001234384510417722,0.01072111624,0.00223596,0.001543952,0.00877526924,0.01144848724
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 25 --batch 5,0.00967484324,0.0008115985739184735,0.00921693724,0.001918808,0.001789352,0.00898281524,0.01089884424
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 25 --batch 25,0.00933748504,0.0011489431605572142,0.008739821239999999,0.00240576,0.001347952,0.00814407724,0.01078789724
+../../pulsedcm/target/release/pulsedcm-cli tmp/1_one_big_image_MG ano --out anonymization --workers 25 --batch 15,0.01007368164,0.0011368856144457983,0.01055312424,0.0010311600000000001,0.002942336,0.00849720224,0.01126973424

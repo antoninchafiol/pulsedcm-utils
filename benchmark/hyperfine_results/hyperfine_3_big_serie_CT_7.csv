@@ -1,0 +1,11 @@
+command,mean,stddev,median,user,system,min,max
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization,0.7355096604,0.0500723794398406,0.707022451,0.029687139999999994,0.06781773999999999,0.689796619,0.796000657
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 5 --batch 5,0.7309881198,0.04361431278685503,0.741035259,0.03830994,0.06370894,0.670787827,0.78820652
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 5 --batch 15,0.7110830396,0.04097438798254512,0.704464311,0.025327339999999997,0.07169874,0.657570221,0.7720024090000001
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 5 --batch 25,0.6635874879999999,0.03337821652619464,0.679336277,0.03264954,0.06000594,0.605138994,0.685365955
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 10 --batch 5,0.6765109257999999,0.03621022515095681,0.678051501,0.024460339999999997,0.06964314,0.630414529,0.726867452
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 10 --batch 25,0.7581964272,0.04511144740514175,0.744535044,0.02465214,0.07489554000000001,0.706291037,0.821207696
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 10 --batch 15,0.6445942673999999,0.07887037376110133,0.643210636,0.02170374,0.07144273999999999,0.549806559,0.751588472
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 25 --batch 5,0.6529725292,0.023892652869993727,0.647570306,0.035405940000000004,0.05948214,0.623504507,0.679101422
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 25 --batch 25,0.6615342206,0.033274594509831126,0.650666287,0.02732234,0.06532614,0.633148076,0.718447703
+../../pulsedcm/target/release/pulsedcm-cli tmp/3_big_serie_CT ano --out anonymization --workers 25 --batch 15,0.7031817556,0.03858658534457788,0.708163961,0.025125139999999997,0.07075834,0.648290246,0.747915774
