@@ -58,7 +58,7 @@ def main():
 
         try:
             samples_df = pd.read_json(path_sample)
-            df['p95'].append(np.percentile(samples_df['times'],95))
+            df['p95'].append(np.percentile(samples_df['times'],95) / NANO_TO_SECS)
         except:
             pass    
 
