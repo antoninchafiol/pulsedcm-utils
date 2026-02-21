@@ -1,4 +1,4 @@
-#!/mnt/c/Users/Antonin/Documents/_me/pulsedcm-utils/benchmark/.venv/bin/python3
+#!/mnt/c/Users/Antonin/Documents/_me/pulsedcm-utils/benchmark/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

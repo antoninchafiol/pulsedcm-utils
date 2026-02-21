@@ -1,4 +1,3 @@
-tmp
-hyperfine_results
-dcmtk_view
-crit_bench
+.venv/
+outputs/crit_bench
+log.json
